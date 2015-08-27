@@ -1,16 +1,28 @@
 package bms.nfccreditcardreader;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.nfc.NfcAdapter;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
+
+    private Button nfcOn;
+    private Button nfcOff;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+
+        nfcOn = (Button) findViewById(R.id.nfcOnButton);
+        nfcOff = (Button) findViewById(R.id.nfcOffButton);
+
+        //setContentView(R.layout.activity_main);
     }
 
     @Override
@@ -33,5 +45,17 @@ public class MainActivity extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void nfcOnPressed(View view){
+
+        NfcAdapter mNfcAdapter = NfcAdapter.getDefaultAdapter(view.getContext());
+
+        if (!mNfcAdapter.isEnabled())
+        {
+            Toast.makeText(getApplicationContext(), "Please activate NFC and press Back to return to the application!", Toast.LENGTH_LONG).show();
+            startActivity(new Intent(android.provider.Settings.ACTION_WIRELESS_SETTINGS));
+        }
+
     }
 }
