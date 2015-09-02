@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.nfc.NfcAdapter;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -22,7 +23,7 @@ public class MainActivity extends Activity {
         nfcOn = (Button) findViewById(R.id.nfcOnButton);
         nfcOff = (Button) findViewById(R.id.nfcOffButton);
 
-        //setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main);
     }
 
     @Override
@@ -54,7 +55,9 @@ public class MainActivity extends Activity {
         if (!mNfcAdapter.isEnabled())
         {
             Toast.makeText(getApplicationContext(), "Please activate NFC and press Back to return to the application!", Toast.LENGTH_LONG).show();
-            startActivity(new Intent(android.provider.Settings.ACTION_WIRELESS_SETTINGS));
+            startActivity(new Intent(Settings.ACTION_NFC_SETTINGS));
+        } else{
+            Toast.makeText(getApplicationContext(), "NFC is enabled. Congrats.", Toast.LENGTH_LONG).show();
         }
 
     }
