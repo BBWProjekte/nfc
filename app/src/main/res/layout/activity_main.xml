@@ -5,27 +5,36 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
 
-    <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView" />
-
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Button"
+        android:text="@string/nfcButtonOn"
         android:id="@+id/nfcOnButton"
-        android:layout_below="@+id/textView"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="99dp"
-        android:onClick="nfcOnPressed" />
+        android:onClick="nfcOnPressed"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Button"
+        android:text="@string/nfcButtonOff"
         android:id="@+id/nfcOffButton"
-        android:layout_centerVertical="true"
-        android:layout_alignParentStart="true"
-        android:onClick="nfcOnPressed" />
+        android:onClick="nfcOffPressed"
+        android:layout_below="@+id/nfcOnButton"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/toReader"
+        android:id="@+id/toReaderButton"
+        android:onClick="toReaderPressed"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/toReaderDescription"
+        android:layout_above="@+id/toReaderButton"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

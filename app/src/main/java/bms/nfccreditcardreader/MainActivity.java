@@ -15,6 +15,7 @@ public class MainActivity extends Activity {
 
     private Button nfcOn;
     private Button nfcOff;
+    private Button toReader;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +23,7 @@ public class MainActivity extends Activity {
 
         nfcOn = (Button) findViewById(R.id.nfcOnButton);
         nfcOff = (Button) findViewById(R.id.nfcOffButton);
+        toReader = (Button) findViewById(R.id.toReaderButton);
 
         setContentView(R.layout.activity_main);
     }
@@ -50,15 +52,37 @@ public class MainActivity extends Activity {
 
     public void nfcOnPressed(View view){
 
-        NfcAdapter mNfcAdapter = NfcAdapter.getDefaultAdapter(view.getContext());
+        NfcAdapter nfc = NfcAdapter.getDefaultAdapter(view.getContext());
 
-        if (!mNfcAdapter.isEnabled())
+        if (!nfc.isEnabled())
         {
-            Toast.makeText(getApplicationContext(), "Please activate NFC and press Back to return to the application!", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Aktiviere NFC in den Optionen.", Toast.LENGTH_LONG).show();
             startActivity(new Intent(Settings.ACTION_NFC_SETTINGS));
         } else{
-            Toast.makeText(getApplicationContext(), "NFC is enabled. Congrats.", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "NFC ist bereits aktiviert.", Toast.LENGTH_LONG).show();
         }
+    }
 
+    public void nfcOffPressed(View view){
+
+        NfcAdapter nfc = NfcAdapter.getDefaultAdapter(view.getContext());
+
+        if(nfc.isEnabled()){
+            Toast.makeText(getApplicationContext(), "Deaktiviere NFC in den Optionen.", Toast.LENGTH_LONG).show();
+            startActivity(new Intent(Settings.ACTION_NFC_SETTINGS));
+        } else{
+            Toast.makeText(getApplicationContext(), "NFC ist bereits deaktiviert.", Toast.LENGTH_LONG).show();
+        }
+    }
+
+    public void toReaderPressed(View view){
+
+        NfcAdapter nfc = NfcAdapter.getDefaultAdapter(view.getContext());
+
+        if(!nfc.isEnabled()){
+            Toast.makeText(getApplicationContext(),"Hast du nicht was vergessen?", Toast.LENGTH_LONG).show();
+        } else{
+            Toast.makeText(getApplicationContext(),"Working...", Toast.LENGTH_LONG).show();
+        }
     }
 }

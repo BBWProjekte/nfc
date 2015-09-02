@@ -3,4 +3,8 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="nfcButtonOn">NFC aktivieren</string>
+    <string name="nfcButtonOff">NFC deaktivieren</string>
+    <string name="toReader">Zum Kartenleser</string>
+    <string name="toReaderDescription">Sobald du NFC aktiviert hast, kannst du zum Kartenleser vorfahren. Klicke dafür auf den Button \"Zum Kartenleser\".</string>
 </resources>
