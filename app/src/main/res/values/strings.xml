@@ -1,8 +1,9 @@
 <resources>
-    <string name="app_name">NFCCreditCardReader</string>
+    <string name="app_name">NFC Kartenleser</string>
 
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">Einstellungen</string>
+    <string name="action_about">Über...</string>
+
     <string name="nfcButtonOn">NFC aktivieren</string>
     <string name="nfcButtonOff">NFC deaktivieren</string>
     <string name="toReader">Zum Kartenleser</string>

@@ -1,6 +1,8 @@
 package bms.nfccreditcardreader;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.nfc.NfcAdapter;
 import android.os.Bundle;
@@ -17,6 +19,8 @@ public class MainActivity extends Activity {
     private Button nfcOff;
     private Button toReader;
 
+    private AlertDialog alertDialog;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,7 +34,6 @@ public class MainActivity extends Activity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
@@ -46,6 +49,10 @@ public class MainActivity extends Activity {
         if (id == R.id.action_settings) {
             return true;
         }
+        if (id == R.id.action_about) {
+            createDialog("NFC Kreditkartenleser","\u00a9 2015\nLuka Kramer\nMatthias Koch\nJanes Thomas\n\nBMS Winterthur");
+            alertDialog.show();
+        }
 
         return super.onOptionsItemSelected(item);
     }
@@ -58,6 +65,7 @@ public class MainActivity extends Activity {
         {
             Toast.makeText(getApplicationContext(), "Aktiviere NFC in den Optionen.", Toast.LENGTH_LONG).show();
             startActivity(new Intent(Settings.ACTION_NFC_SETTINGS));
+            //Toast.makeText(getApplicationContext(), "Klicke zurück, um wieder zur App zu gelangen.", Toast.LENGTH_LONG).show();
         } else{
             Toast.makeText(getApplicationContext(), "NFC ist bereits aktiviert.", Toast.LENGTH_LONG).show();
         }
@@ -70,6 +78,7 @@ public class MainActivity extends Activity {
         if(nfc.isEnabled()){
             Toast.makeText(getApplicationContext(), "Deaktiviere NFC in den Optionen.", Toast.LENGTH_LONG).show();
             startActivity(new Intent(Settings.ACTION_NFC_SETTINGS));
+            //Toast.makeText(getApplicationContext(), "Klicke zurück, um wieder zur App zu gelangen.", Toast.LENGTH_LONG).show();
         } else{
             Toast.makeText(getApplicationContext(), "NFC ist bereits deaktiviert.", Toast.LENGTH_LONG).show();
         }
@@ -82,7 +91,23 @@ public class MainActivity extends Activity {
         if(!nfc.isEnabled()){
             Toast.makeText(getApplicationContext(),"Hast du nicht was vergessen?", Toast.LENGTH_LONG).show();
         } else{
-            Toast.makeText(getApplicationContext(),"Working...", Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(MainActivity.this, ReaderActivity.class);
+            startActivity(intent);
         }
+    }
+
+    private void createDialog(String reason, String reasonDescription){
+        alertDialog = new AlertDialog.Builder(MainActivity.this).create();
+        alertDialog.setTitle(reason);
+        alertDialog.setMessage(reasonDescription);
+        alertDialog.setCanceledOnTouchOutside(false);
+        alertDialog.setCancelable(false);
+
+        alertDialog.setButton("Zurück zur Startseite", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialogInterface, int which) {
+                Intent intent = new Intent(MainActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
