@@ -8,6 +8,6 @@
         android:layout_height="wrap_content"
         android:id="@+id/nfcImage"
         android:src="@drawable/nfc"
-        android:background="@android:color/holo_green_light"
+        android:background="@android:color/darker_gray"
         android:layout_gravity="center_horizontal" />
 </LinearLayout>

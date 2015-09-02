@@ -103,7 +103,7 @@ public class MainActivity extends Activity {
         alertDialog.setCanceledOnTouchOutside(false);
         alertDialog.setCancelable(false);
 
-        alertDialog.setButton("Zurück zur Startseite", new DialogInterface.OnClickListener() {
+        alertDialog.setButton(DialogInterface.BUTTON_NEUTRAL,"Zurück zur Startseite", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialogInterface, int which) {
                 Intent intent = new Intent(MainActivity.this, MainActivity.class);
                 startActivity(intent);

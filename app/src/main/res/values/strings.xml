@@ -4,6 +4,7 @@
     <string name="action_settings">Einstellungen</string>
     <string name="action_about">Über...</string>
 
+    <string name="mainHeader">Um diese App zu benutzen ist NFC notwendig.</string>
     <string name="nfcButtonOn">NFC aktivieren</string>
     <string name="nfcButtonOff">NFC deaktivieren</string>
     <string name="toReader">Zum Kartenleser</string>
