@@ -20,14 +20,6 @@
         android:onClick="nfcOnPressed"
         android:layout_below="@+id/mainHeader"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/nfcButtonOff"
-        android:id="@+id/nfcOffButton"
-        android:onClick="nfcOffPressed"
-        android:layout_below="@+id/nfcOnButton"/>
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
