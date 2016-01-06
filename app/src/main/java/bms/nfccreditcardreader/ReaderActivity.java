@@ -16,10 +16,20 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.github.devnied.emvnfccard.parser.IProvider;
+
 public class ReaderActivity extends Activity{
 
     private ImageView nfcImage;
     private AlertDialog alertDialog;
+
+    /*
+    IProvider prov = new Provider();
+    // Create parser (true for contactless false otherwise)
+    EMVParser parser = new EMVParser(prov, true);
+    // Read card
+    EMVCard card = parser.readEmvCard();
+    */
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -49,7 +59,7 @@ public class ReaderActivity extends Activity{
                         NfcAdapter.STATE_OFF);
                 switch (state) {
                     case NfcAdapter.STATE_OFF:
-                        createDialog("No NFC","test");
+                        createDialog("NFC wurde ausgeschaltet","Der NFC Scan konnte nicht abgeschlossen werden.");
                         alertDialog.show();
                         break;
                     case NfcAdapter.STATE_TURNING_OFF:

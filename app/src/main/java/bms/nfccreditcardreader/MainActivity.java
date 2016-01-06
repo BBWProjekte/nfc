@@ -47,7 +47,8 @@ public class MainActivity extends Activity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            return true;
+            createDialog("Einstellungen","Hier kann nichts eingestellt werden.");
+            alertDialog.show();
         }
         if (id == R.id.action_about) {
             createDialog("NFC Kreditkartenleser","\u00a9 2015\nLuka Kramer\nMatthias Koch\nJanes Thomas\n\nBMS Winterthur");
