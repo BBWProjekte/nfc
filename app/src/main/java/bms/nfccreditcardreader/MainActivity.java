@@ -1,5 +1,5 @@
 
-        //removed in "removed nfc-off button (part 2)//package bms.nfccreditcardreader;
+package bms.nfccreditcardreader;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -27,7 +27,6 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
 
         nfcOn = (Button) findViewById(R.id.nfcOnButton);
-        nfcOff = (Button) findViewById(R.id.nfcOffButton);
         toReader = (Button) findViewById(R.id.toReaderButton);
 
         setContentView(R.layout.activity_main);
@@ -60,34 +59,8 @@ public class MainActivity extends Activity {
 
     public void nfcOnPressed(View view){
 
-        //removed in "removed nfc-off button (part 2)"
-        //NfcAdapter nfc = NfcAdapter.getDefaultAdapter(view.getContext());
-        
-        /*
-        if (!nfc.isEnabled())
-        {
-        */
         Toast.makeText(getApplicationContext(), "Ändere den NFC Status.", Toast.LENGTH_LONG).show();
         startActivity(new Intent(Settings.ACTION_NFC_SETTINGS));
-        //Toast.makeText(getApplicationContext(), "Klicke zurück, um wieder zur App zu gelangen.", Toast.LENGTH_LONG).show();
-        /*
-        } else{
-            Toast.makeText(getApplicationContext(), "NFC ist bereits aktiviert.", Toast.LENGTH_LONG).show();
-        }
-        */
-    }
-
-    public void nfcOffPressed(View view){
-
-        NfcAdapter nfc = NfcAdapter.getDefaultAdapter(view.getContext());
-
-        if(nfc.isEnabled()){
-            Toast.makeText(getApplicationContext(), "Deaktiviere NFC in den Optionen.", Toast.LENGTH_LONG).show();
-            startActivity(new Intent(Settings.ACTION_NFC_SETTINGS));
-            //Toast.makeText(getApplicationContext(), "Klicke zurück, um wieder zur App zu gelangen.", Toast.LENGTH_LONG).show();
-        } else{
-            Toast.makeText(getApplicationContext(), "NFC ist bereits deaktiviert.", Toast.LENGTH_LONG).show();
-        }
     }
 
     public void toReaderPressed(View view){

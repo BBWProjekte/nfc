@@ -60,6 +60,10 @@ public class ReaderActivity extends Activity{
                         break;
                 }
             }
+
+            if(action.equals(NfcAdapter.ACTION_TAG_DISCOVERED)){
+
+            }
         }
     };
 

@@ -5,7 +5,7 @@
     <string name="action_about">Über...</string>
 
     <string name="mainHeader">Um diese App zu benutzen ist NFC notwendig.</string>
-    <string name="nfcButtonOn">NFC aktivieren</string>
+    <string name="nfcButtonOn">NFC Status ändern</string>
     <string name="nfcButtonOff">NFC deaktivieren</string>
     <string name="toReader">Zum Kartenleser</string>
     <string name="toReaderDescription">Sobald du NFC aktiviert hast, kannst du zum Kartenleser vorfahren. Klicke dafür auf den Button \"Zum Kartenleser\".</string>
