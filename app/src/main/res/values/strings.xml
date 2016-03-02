@@ -1,12 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">NFC Kartenleser</string>
-
-    <string name="action_settings">Einstellungen</string>
-    <string name="action_about">Über...</string>
-
-    <string name="mainHeader">Um diese App zu benutzen ist NFC notwendig.</string>
-    <string name="nfcButtonOn">NFC Status ändern</string>
-    <string name="nfcButtonOff">NFC deaktivieren</string>
-    <string name="toReader">Zum Kartenleser</string>
-    <string name="toReaderDescription">Sobald du NFC aktiviert hast, kannst du zum Kartenleser vorfahren. Klicke dafür auf den Button \"Zum Kartenleser\".</string>
+    <string name="app_name">Triangle Scanner</string>
+    <string name="beschreibung">Diese App ermöglicht es, Kreditkarteninformationen zu lesen.</string>
+    <string name="warnung">Kreditkartendaten stehlen mag Spass machen, aber es ist eine Straftat.</string>
+    <string name="action_about">Über</string>
 </resources>

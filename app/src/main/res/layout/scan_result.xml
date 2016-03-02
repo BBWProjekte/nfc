@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="3dp">
+
+    <ImageView
+        android:id="@+id/header_imageView_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="10dp"
+        android:focusableInTouchMode="false"
+        android:src="@drawable/app_logo" />
+
+    <TextView
+        android:id="@+id/header_textView_caption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/header_imageView_logo"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="17dp"
+        android:layout_toRightOf="@+id/header_imageView_logo"
+        android:text="@string/beschreibung" />
+
+    <ImageView
+        android:id="@+id/header_imageView_warning"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="10dp"
+        android:focusableInTouchMode="false"
+        android:src="@drawable/warning"
+        android:layout_below="@+id/header_imageView_logo"/>
+
+    <TextView
+        android:id="@+id/header_textView_captionWarning"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/header_imageView_warning"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="17dp"
+        android:layout_toRightOf="@+id/header_imageView_warning"
+        android:text="@string/warnung"
+        android:layout_below="@+id/header_imageView_logo"/>
+
+    <LinearLayout
+        android:id="@+id/main_LinearLayout_root"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/main_button_scan_again"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/header_imageView_logo"
+        android:animateLayoutChanges="true"
+        android:orientation="vertical"></LinearLayout>
+
+    <Button
+        android:id="@+id/main_button_scan_again"
+        style="@android:style/Widget.Holo.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
+        android:background="@android:color/holo_blue_dark"
+        android:onClick="onScanButtonClick"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="Scan Again" />
+</RelativeLayout>
